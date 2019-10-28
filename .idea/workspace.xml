@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ffd1156-c99e-479e-8870-5e560fdecbc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/embedding/positional_encoding.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/embedding/positional_encoding.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/embedding/transformer_embedding.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/embedding/transformer_embedding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/transformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/util/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/util/data_loader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -239,7 +234,7 @@
       <workItem from="1571764774200" duration="26548000" />
       <workItem from="1572274330998" duration="452000" />
       <workItem from="1572274801399" duration="3768000" />
-      <workItem from="1572278674457" duration="2358000" />
+      <workItem from="1572278674457" duration="2641000" />
     </task>
     <servers />
   </component>

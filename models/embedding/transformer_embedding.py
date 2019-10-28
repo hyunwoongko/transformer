@@ -30,6 +30,4 @@ class TransformerEmbedding(nn.Module):
     def forward(self, x):
         tok_emb = self.tok_emb(x)
         pos_emb = self.pos_emb(x)
-        print(tok_emb.size(), pos_emb.size())
-
         return self.drop_out(tok_emb + pos_emb)
