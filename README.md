@@ -8,7 +8,7 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 # 1. Positional Encoding
 ![fig](image/7.png)
 <br><br>
-![code](https://user-images.githubusercontent.com/38183241/67699416-719b1680-f9ef-11e9-998c-3dffc838cb33.png)
+![code](https://user-images.githubusercontent.com/38183241/67700800-fedf6a80-f9f1-11e9-89d5-0417244386d9.png)
 <br><br>
 
 ## Reference
