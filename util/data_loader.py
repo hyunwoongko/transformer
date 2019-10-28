@@ -4,7 +4,7 @@
 @homepage : https://github.com/gusdnd852
 """
 from torchtext.data import Field, BucketIterator
-from torchtext.datasets import WMT14
+from torchtext.datasets import Multi30k
 
 
 class DataLoader:
@@ -17,6 +17,7 @@ class DataLoader:
         self.tokenize_de = tokenize_de
         self.init_token = init_token
         self.eos_token = eos_token
+        print('dataset initializing start')
 
     def make_dataset(self):
         if self.ext == ('.de', '.en'):
@@ -30,8 +31,7 @@ class DataLoader:
                                 lower=True, batch_first=True)
             self.target = Field(tokenize=self.tokenize_de, init_token=self.init_token, eos_token=self.eos_token,
                                 lower=True, batch_first=True)
-
-            train_data, valid_data, test_data = WMT14.splits(exts=self.ext, fields=(self.source, self.target))
+            train_data, valid_data, test_data = Multi30k.splits(exts=self.ext, fields=(self.source, self.target))
             return train_data, valid_data, test_data
 
     def build_vocab(self, train_data, min_freq):
@@ -42,5 +42,5 @@ class DataLoader:
         train_iterator, valid_iterator, test_iterator = BucketIterator.splits((train, validate, test),
                                                                               batch_size=batch_size,
                                                                               device=device)
-
+        print('dataset initializing done')
         return train_iterator, valid_iterator, test_iterator

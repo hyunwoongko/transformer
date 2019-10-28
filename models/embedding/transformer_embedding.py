@@ -15,7 +15,7 @@ class TransformerEmbedding(nn.Module):
     positional encoding can give positional information to network
     """
 
-    def __init__(self, vocab_size, d_model, drop_prob):
+    def __init__(self, vocab_size, d_model, max_len, drop_prob, device):
         """
         class for word embedding that included positional information
 
@@ -24,10 +24,12 @@ class TransformerEmbedding(nn.Module):
         """
         super(TransformerEmbedding, self).__init__()
         self.tok_emb = TokenEmbedding(vocab_size, d_model)
-        self.pos_emb = PostionalEncoding(d_model)
+        self.pos_emb = PostionalEncoding(d_model, max_len, device)
         self.drop_out = nn.Dropout(p=drop_prob)
 
     def forward(self, x):
-        embedding = self.tok_emb(x) + self.pos_emb(x)
-        embedding = self.drop_out(embedding)
-        return embedding
+        tok_emb = self.tok_emb(x)
+        pos_emb = self.pos_emb(x)
+        print(tok_emb.size(), pos_emb.size())
+
+        return self.drop_out(tok_emb + pos_emb)

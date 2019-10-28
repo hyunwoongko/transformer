@@ -4,7 +4,6 @@
 @homepage : https://github.com/gusdnd852
 """
 import time
-
 from torch import nn
 from torch.optim import Adam
 
@@ -18,7 +17,9 @@ import math
 model = Transformer(d_model=d_model,
                     enc_voc_size=enc_voc_size,
                     dec_voc_size=dec_voc_size,
-                    drop_prob=drop_prob)
+                    max_len=max_len,
+                    drop_prob=drop_prob,
+                    device=device).to(device)
 
 optimizer = Adam(model.parameters(), lr=init_lr, weight_decay=weight_decay)
 optimizer = LRScheduler(d_model=d_model, factor=factor, warmup=warmup, optimizer=optimizer)
@@ -65,19 +66,19 @@ def evaluate(model, iterator, criterion):
     return epoch_loss / len(iterator)
 
 
-for epoch in range(epoch):
+def run(total_epoch, best_loss):
+    for step in range(total_epoch):
+        start_time = time.time()
+        train_loss = train(model, train_iter, optimizer, criterion, clip)
+        valid_loss = evaluate(model, valid_iter, criterion)
+        end_time = time.time()
 
-    start_time = time.time()
-    train_loss = train(model, train_iter, optimizer, criterion, clip)
-    valid_loss = evaluate(model, valid_iter, criterion)
-    end_time = time.time()
+        epoch_mins, epoch_secs = epoch_time(start_time, end_time)
 
-    epoch_mins, epoch_secs = epoch_time(start_time, end_time)
+        if valid_loss < best_loss:
+            best_loss = valid_loss
+            torch.save(model.state_dict(), 'model.pt')
 
-    if valid_loss < inf:
-        best_valid_loss = valid_loss
-        torch.save(model.state_dict(), 'tut6-model.pt')
-
-    print(f'Epoch: {epoch + 1:02} | Time: {epoch_mins}m {epoch_secs}s')
-    print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
-    print(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f}')
+        print(f'Epoch: {epoch + 1:02} | Time: {epoch_mins}m {epoch_secs}s')
+        print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
+        print(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f}')
