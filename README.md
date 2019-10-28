@@ -1,8 +1,16 @@
 # Transformer - Pytorch
 
 My own implementation Transformer model (Attention is All You Need - Google Brain, 2017)
-<br>
-![img](image/1.png)
+<br><br>
+
+# 1. Model Architecture
+![model](image/1.png)
+<br><br>
+
+# 2. Positional Encoding
+![fig](image/7.png)
+<br><br>
+![code](https://user-images.githubusercontent.com/38183241/67699416-719b1680-f9ef-11e9-998c-3dffc838cb33.png)
 <br><br>
 
 ## Reference
@@ -10,6 +18,7 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 |:---:|
 |[Attention is All You Need, 2017 - Google](https://arxiv.org/abs/1706.03762)|
 |[The Illustrated Transformer - Jay Alammar](http://jalammar.github.io/illustrated-transformer/)|
+|[Data & Optimization Code Reference - Bentrevett](https://github.com/bentrevett/pytorch-seq2seq/)|
 <br><br>
 
 ## Licence
