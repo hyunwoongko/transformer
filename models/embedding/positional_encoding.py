@@ -18,6 +18,7 @@ class PostionalEncoding(nn.Module):
 
         :param d_model: dimension of model
         :param max_len: max sequence length
+        :param device: hardware device setting
         """
         super(PostionalEncoding, self).__init__()
 
