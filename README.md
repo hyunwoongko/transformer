@@ -2,12 +2,10 @@
 
 My own implementation Transformer model (Attention is All You Need - Google Brain, 2017)
 <br><br>
-
-# 1. Model Architecture
 ![model](image/1.png)
 <br><br>
 
-# 2. Positional Encoding
+# 1. Positional Encoding
 ![fig](image/7.png)
 <br><br>
 ![code](https://user-images.githubusercontent.com/38183241/67699416-719b1680-f9ef-11e9-998c-3dffc838cb33.png)
