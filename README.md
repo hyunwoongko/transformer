@@ -1,17 +1,15 @@
 # Transformer - Pytorch
 
 My own implementation Transformer model (Attention is All You Need - Google Brain, 2017)
-<br><br>
+<br>
 ![img](image/1.png)
 <br><br>
-
 
 ## Reference
 |Reference|
 |:---:|
 |[Attention is All You Need, 2017 - Google](https://arxiv.org/abs/1706.03762)|
 |[The Illustrated Transformer - Jay Alammar](http://jalammar.github.io/illustrated-transformer/)|
-
 <br><br>
 
 ## Licence
