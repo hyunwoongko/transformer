@@ -3,14 +3,14 @@
 My own implementation Transformer model (Attention is All You Need - Google Brain, 2017)
 <br>
 ![img](image/1.png)
-<br>
+<br><br>
 
 ## Reference
 |Reference|
 |:---:|
 |[Attention is All You Need, 2017 - Google](https://arxiv.org/abs/1706.03762)|
 |[The Illustrated Transformer - Jay Alammar](http://jalammar.github.io/illustrated-transformer/)|
-<br>
+<br><br>
 
 ## Licence
     Copyright 2019 Hyunwoong Go.
