@@ -2,7 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ffd1156-c99e-479e-8870-5e560fdecbc6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conf.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/blocks/decoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/blocks/encoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/embedding/positional_encoding.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/embedding/token_embeddings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/embedding/transformer_embedding.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/layers/multi_head_attention.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/layers/scale_dot_product_attention.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/transformer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/data_loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/epoch_timer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/lr_scheduler.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/util/tokenizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/User.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/blocks/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/attention_layers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/embedding/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/attention_layers/multi_head_attention.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/attention_layers/scale_dot_product_attention.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/main_layers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/layers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/main_layers/decoder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/main_layers/encoder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/other_layers/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/other_layers/layer_normalization.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/other_layers/position_wise_feed_forward.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/other_layers/positional_encoding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/other_layers/residual_Layer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/transformer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/embedding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/loader.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,23 +86,24 @@
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="flex.debug.filter.swf.load.unload" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Paper-Implementation" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15921569" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Github\Attention is All you need\data" />
+      <recent name="C:\Users\User\Github\Attention is All you need\models\embedding" />
       <recent name="C:\Users\User\Github\Transformer\src\model\other_layers" />
       <recent name="C:\Users\User\Github\Transformer\src\model\layer" />
       <recent name="C:\Users\User\Github\Transformer\src\model\sub_layer" />
-      <recent name="C:\Users\User\Github\Transformer\src\util" />
-      <recent name="C:\Users\User\Github\Transformer\src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Github\Attention is All you need" />
       <recent name="C:\Users\User\Github\Transformer\src\model" />
       <recent name="C:\Users\User\Github\Transformer\src\data" />
     </key>
@@ -80,7 +120,51 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.train">
+    <configuration name="positional_encoding (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Transformer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models/embedding" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/embedding/positional_encoding.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Transformer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="train" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Transformer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -89,12 +173,56 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/train.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/train.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="transformer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Transformer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/transformer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="xavier_encoding" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Transformer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models/embedding" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/embedding/xavier_encoding.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -106,8 +234,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.train" />
-        <item itemvalue="Python.train" />
-        <item itemvalue="Python.train" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.transformer" />
+        <item itemvalue="Python.positional_encoding (1)" />
+        <item itemvalue="Python.xavier_encoding" />
       </list>
     </recent_temporary>
   </component>
@@ -138,6 +268,11 @@
       <workItem from="1566881234600" duration="3740000" />
       <workItem from="1567222758269" duration="599000" />
       <workItem from="1567237738541" duration="6883000" />
+      <workItem from="1571734145839" duration="15372000" />
+      <workItem from="1571761081497" duration="2340000" />
+      <workItem from="1571764774200" duration="26548000" />
+      <workItem from="1572274330998" duration="452000" />
+      <workItem from="1572274801399" duration="3768000" />
     </task>
     <servers />
   </component>
@@ -159,12 +294,19 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Test$scale_dot_attention.coverage" NAME="scale_dot_attention Coverage Results" MODIFIED="1566325245567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attention" />
+    <SUITE FILE_PATH="coverage/Attention_is_All_you_need$visuialization.coverage" NAME="visuialization Coverage Results" MODIFIED="1571744267842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models/embedding" />
+    <SUITE FILE_PATH="coverage/Attention_is_All_you_need$positional_encoding.coverage" NAME="positional_encoding Coverage Results" MODIFIED="1571926946015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models/embedding" />
+    <SUITE FILE_PATH="coverage/Attention_is_All_you_need$positional_encoding__1_.coverage" NAME="positional_encoding (1) Coverage Results" MODIFIED="1572256243488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models/embedding" />
+    <SUITE FILE_PATH="coverage/Transformer$multi_head_attention__1_.coverage" NAME="multi_head_attention (1) Coverage Results" MODIFIED="1566546992343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/model/attention" />
+    <SUITE FILE_PATH="coverage/Attention_is_All_you_need$xavier_encoding.coverage" NAME="xavier_encoding Coverage Results" MODIFIED="1571927190042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models/embedding" />
+    <SUITE FILE_PATH="coverage/Transformer$transformer.coverage" NAME="transformer Coverage Results" MODIFIED="1566537497636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/model" />
     <SUITE FILE_PATH="coverage/Test$test.coverage" NAME="test Coverage Results" MODIFIED="1566337825660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Attention_is_All_you_need$test.coverage" NAME="test Coverage Results" MODIFIED="1572274858947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Transformer$data.coverage" NAME="data Coverage Results" MODIFIED="1566825693305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/Test$multi_head_attention.coverage" NAME="multi_head_attention Coverage Results" MODIFIED="1566335795746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attention" />
     <SUITE FILE_PATH="coverage/Transformer$train.coverage" NAME="train Coverage Results" MODIFIED="1566985226063" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Transformer$multi_head_attention__1_.coverage" NAME="multi_head_attention (1) Coverage Results" MODIFIED="1566546992343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/model/attention" />
-    <SUITE FILE_PATH="coverage/Transformer$transformer.coverage" NAME="transformer Coverage Results" MODIFIED="1566537497636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src/model" />
+    <SUITE FILE_PATH="coverage/Attention_is_All_you_need$transformer.coverage" NAME="transformer Coverage Results" MODIFIED="1572256877779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Attention_is_All_you_need$train.coverage" NAME="train Coverage Results" MODIFIED="1572278248727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Test$attention.coverage" NAME="attention Coverage Results" MODIFIED="1566315846477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

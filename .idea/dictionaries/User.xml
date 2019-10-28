@@ -4,6 +4,7 @@
       <w>conv</w>
       <w>cuda</w>
       <w>pytorch</w>
+      <w>unsqueeze</w>
     </words>
   </dictionary>
 </component>

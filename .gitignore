@@ -1,3 +1,4 @@
 ## dataset ignore
 data/
 venv/
+.data/
