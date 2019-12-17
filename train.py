@@ -18,6 +18,9 @@ model = Transformer(d_model=d_model,
                     enc_voc_size=enc_voc_size,
                     dec_voc_size=dec_voc_size,
                     max_len=max_len,
+                    ffn_hidden=ffn_hidden,
+                    n_head=n_heads,
+                    n_layers=n_layers,
                     drop_prob=drop_prob,
                     device=device).to(device)
 

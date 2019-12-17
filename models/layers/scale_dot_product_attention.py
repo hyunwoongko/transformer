@@ -3,6 +3,8 @@
 @when : 2019-10-22
 @homepage : https://github.com/gusdnd852
 """
+import math
+
 from torch import nn
 
 
@@ -20,6 +22,23 @@ class ScaleDotProductAttention(nn.Module):
         self.softmax = nn.Softmax()
         self.dropout = nn.Dropout()
 
-    def forward(self, q, k, v, mask=None, drop_prob=0.1):
-        d_k = k.size()
-        pass
+    def forward(self, q, k, v, mask=None, e=1e-12):
+        # input is 4 dimension tensor
+        # [batch_size, head, length, d_tensor]
+        batch_size, head, length, d_tensor = k.size()
+        d_model = head * d_tensor
+
+        # 1. dot product Query with Key^T to compute similarity
+        k_t = k.view(batch_size, head, d_tensor, length)
+        score = (q @ k_t) / math.sqrt(d_model)
+
+        # 2. apply masking (opt)
+        if mask is not None: score = score.masked_fill(mask == 0, -e)
+
+        # 3. pass them softmax to make [0, 1] range
+        score = self.softmax(score)
+
+        # 4. multiply with Value
+        v = score @ v
+
+        return v, score

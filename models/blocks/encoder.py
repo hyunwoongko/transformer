@@ -5,25 +5,30 @@
 """
 from torch import nn
 
+from models.layers.layer_norm import LayerNorm
+from models.layers.multi_head_attention import MultiHeadAttention
+from models.layers.position_wise_feed_forward import PositionwiseFeedForward
+
 
 class Encoder(nn.Module):
 
-    def __init__(self):
+    def __init__(self, d_model, ffn_hidden, n_head, drop_prob):
         super(Encoder, self).__init__()
-        self.multi_head_attention = None
-        self.layer_normalization = nn.LayerNorm()
-        self.feed_forward = None
-        self.drop_out = nn.Dropout(p=None)
-
+        self.attention = MultiHeadAttention(d_model=d_model, n_head=n_head)
+        self.norm = LayerNorm(d_model=d_model)
+        self.feed_forward = PositionwiseFeedForward(d_model=d_model, hidden=ffn_hidden)
+        self.drop_out = nn.Dropout(p=drop_prob)
 
     def forward(self, x):
-        shortcut = x
-        x = self.multi_head_attention(x, x, x)
-        x += shortcut
-        x = self.layer_normalization(x)
+        _x = x
+        x = self.attention(x, x, x)
+        x += x
+        x = self.norm(x)
 
-        shortcut = x
+        _x = x
         x = self.feed_forward(x)
-        x += shortcut
-        x = self.layer_normalization(x)
-        return x
+        x += x
+        x = self.norm(x)
+
+        out = self.drop_out(x)
+        return out
