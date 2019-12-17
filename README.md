@@ -5,12 +5,6 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 ![model](image/1.png)
 <br><br>
 
-# 1. Positional Encoding
-![fig](image/7.png)
-<br><br>
-![code](https://user-images.githubusercontent.com/38183241/67700800-fedf6a80-f9f1-11e9-89d5-0417244386d9.png)
-<br><br>
-
 ## Reference
 |Reference|
 |:---:|
