@@ -25,7 +25,7 @@ class Decoder(nn.Module):
                                                   drop_prob=drop_prob)
                                      for _ in range(n_layers)])
 
-        self.fc_out = nn.Linear(d_model, dec_voc_size)
+        self.linear = nn.Linear(d_model, dec_voc_size)
 
     def forward(self, trg, enc_src, trg_mask, src_mask):
         trg = self.emb(trg)
@@ -33,6 +33,6 @@ class Decoder(nn.Module):
         for layer in self.layers:
             trg = layer(trg, enc_src, trg_mask, src_mask)
 
-        output = self.fc_out(trg)
+        output = self.linear(trg)
 
         return output

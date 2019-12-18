@@ -97,7 +97,7 @@ def run(total_epoch, best_loss):
 
         if valid_loss < best_loss:
             best_loss = valid_loss
-            torch.save(model.state_dict(), 'model-{0}.pt'.format(valid_loss))
+            torch.save(model.state_dict(), 'saved/model-{0}.pt'.format(valid_loss))
 
         print(f'Epoch: {step + 1} | Time: {epoch_mins}m {epoch_secs}s')
         print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
