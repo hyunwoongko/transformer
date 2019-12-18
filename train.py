@@ -10,6 +10,7 @@ from torch import nn, optim
 from torch.optim import Adam
 
 from data import *
+from graph import draw
 from models.model.transformer import Transformer
 from util.epoch_timer import epoch_time
 
@@ -39,7 +40,12 @@ model = Transformer(src_pad_idx=src_pad_idx,
 print(f'The model has {count_parameters(model):,} trainable parameters')
 model.apply(initialize_weights)
 optimizer = Adam(model.parameters(), lr=init_lr, weight_decay=weight_decay)
-lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, verbose=True, factor=factor, patience=patience)
+
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer,
+                                                 verbose=True,
+                                                 factor=factor,
+                                                 patience=patience)
+
 criterion = nn.CrossEntropyLoss(ignore_index=src_pad_idx)
 
 
@@ -60,6 +66,7 @@ def train(model, iterator, optimizer, criterion, clip):
         loss.backward()
         torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
         optimizer.step()
+
         epoch_loss += loss.item()
         print('step :', round((i / len(iterator)) * 100, 2), '% , loss :', loss.item())
 
@@ -92,6 +99,9 @@ def run(total_epoch, best_loss):
         valid_loss = evaluate(model, valid_iter, criterion)
         end_time = time.time()
 
+        if step > warmup:
+            scheduler.step(valid_loss)
+
         train_losses.append(train_loss)
         test_losses.append(valid_loss)
         epoch_mins, epoch_secs = epoch_time(start_time, end_time)
@@ -108,6 +118,7 @@ def run(total_epoch, best_loss):
         f.write(str(test_losses))
         f.close()
 
+        draw()
         print(f'Epoch: {step + 1} | Time: {epoch_mins}m {epoch_secs}s')
         print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
         print(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f}')
