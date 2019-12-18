@@ -20,7 +20,6 @@ class ScaleDotProductAttention(nn.Module):
     def __init__(self):
         super(ScaleDotProductAttention, self).__init__()
         self.softmax = nn.Softmax()
-        self.dropout = nn.Dropout()
 
     def forward(self, q, k, v, mask=None, e=1e-12):
         # input is 4 dimension tensor

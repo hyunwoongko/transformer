@@ -20,7 +20,7 @@ drop_prob = 0.1
 # optimizer parameter setting
 warmup = 5
 factor = 0.8
-init_lr = 1e-6
+init_lr = 1e-4
 weight_decay = 5e-4
 epoch = 100
 clip = 1
