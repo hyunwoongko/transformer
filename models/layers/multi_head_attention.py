@@ -39,7 +39,7 @@ class MultiHeadAttention(nn.Module):
         split tensor by number of head
 
         :param tensor: [batch_size, length, d_model]
-        :return: [batch_size, length, d_tensor, head]
+        :return: [batch_size, head, length, d_tensor]
         """
         batch_size, length, d_model = tensor.size()
 
@@ -53,7 +53,7 @@ class MultiHeadAttention(nn.Module):
         """
         inverse function of self.project(tensor : torch.Tensor)
 
-        :param tensor: [batch_size, length, d_tensor, head]
+        :param tensor: [batch_size, head, length, d_tensor]
         :return: [batch_size, length, d_model]
         """
         batch_size, head, length, d_tensor = tensor.size()
