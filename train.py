@@ -41,7 +41,6 @@ model = Transformer(src_pad_idx=src_pad_idx,
 print(f'The model has {count_parameters(model):,} trainable parameters')
 model.apply(initialize_weights)
 optimizer = Adam(model.parameters(), lr=init_lr, weight_decay=weight_decay)
-optimizer = LRScheduler(d_model=d_model, factor=factor, warmup=warmup, optimizer=optimizer)
 criterion = nn.CrossEntropyLoss(ignore_index=src_pad_idx)
 
 
