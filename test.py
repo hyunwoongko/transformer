@@ -22,7 +22,7 @@ model = Transformer(src_pad_idx=src_pad_idx,
 
 
 def test_model(num_examples):
-    iterator = train_iter
+    iterator = test_iter
     model.load_state_dict(torch.load("./saved/model-saved.pt"))
     model.eval()
 
