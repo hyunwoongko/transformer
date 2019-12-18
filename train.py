@@ -6,14 +6,12 @@
 import math
 import time
 
-from torch import nn
+from torch import nn, optim
 from torch.optim import Adam
 
-from conf import *
 from data import *
 from models.model.transformer import Transformer
 from util.epoch_timer import epoch_time
-from util.lr_scheduler import LRScheduler
 
 
 def count_parameters(model):
@@ -41,6 +39,7 @@ model = Transformer(src_pad_idx=src_pad_idx,
 print(f'The model has {count_parameters(model):,} trainable parameters')
 model.apply(initialize_weights)
 optimizer = Adam(model.parameters(), lr=init_lr, weight_decay=weight_decay)
+lr_scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, verbose=True, factor=factor, patience=patience)
 criterion = nn.CrossEntropyLoss(ignore_index=src_pad_idx)
 
 
@@ -62,7 +61,7 @@ def train(model, iterator, optimizer, criterion, clip):
         torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
         optimizer.step()
         epoch_loss += loss.item()
-        print('step :', round((i/len(iterator)) * 100, 2),  '% , loss :', loss.item())
+        print('step :', round((i / len(iterator)) * 100, 2), '% , loss :', loss.item())
 
     return epoch_loss / len(iterator)
 
@@ -112,3 +111,7 @@ def run(total_epoch, best_loss):
         print(f'Epoch: {step + 1} | Time: {epoch_mins}m {epoch_secs}s')
         print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
         print(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f}')
+
+
+if __name__ == '__main__':
+    run(total_epoch=epoch, best_loss=inf)

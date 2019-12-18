@@ -15,7 +15,7 @@ def read(name):
     file = re.sub('\\]', '', file)
     f.close()
 
-    return [float(i) * 100.0 for i in file.split(',')]
+    return [float(i) for idx, i in enumerate(file.split(',')) if idx <= 150]
 
 
 train = read('./result/train.txt')
@@ -28,5 +28,8 @@ plt.xlabel('epoch')
 plt.ylabel('loss')
 plt.title('training result')
 plt.grid(True, which='both', axis='both')
-plt.legend(loc='lower right')
+plt.legend(loc='lower left')
+plt.xticks([i for i in range(0, 151, 10)])
+plt.yticks([i * 0.2 for i in range(17, 30)])
+
 plt.show()

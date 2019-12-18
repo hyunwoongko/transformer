@@ -31,8 +31,9 @@ class DataLoader:
                                 lower=True, batch_first=True)
             self.target = Field(tokenize=self.tokenize_de, init_token=self.init_token, eos_token=self.eos_token,
                                 lower=True, batch_first=True)
-            train_data, valid_data, test_data = Multi30k.splits(exts=self.ext, fields=(self.source, self.target))
-            return train_data, valid_data, test_data
+
+        train_data, valid_data, test_data = Multi30k.splits(exts=self.ext, fields=(self.source, self.target))
+        return train_data, valid_data, test_data
 
     def build_vocab(self, train_data, min_freq):
         self.source.build_vocab(train_data, min_freq=min_freq)
