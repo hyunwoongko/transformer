@@ -10,7 +10,6 @@ from torch import nn, optim
 from torch.optim import Adam
 
 from data import *
-from graph import draw
 from models.model.transformer import Transformer
 from util.epoch_timer import epoch_time
 
@@ -39,9 +38,11 @@ model = Transformer(src_pad_idx=src_pad_idx,
 
 print(f'The model has {count_parameters(model):,} trainable parameters')
 model.apply(initialize_weights)
-optimizer = Adam(model.parameters(), lr=init_lr, weight_decay=weight_decay)
+optimizer = Adam(params=model.parameters(),
+                 lr=init_lr,
+                 weight_decay=weight_decay)
 
-scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer,
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer=optimizer,
                                                  verbose=True,
                                                  factor=factor,
                                                  patience=patience)
