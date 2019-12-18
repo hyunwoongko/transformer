@@ -63,7 +63,7 @@ def train(model, iterator, optimizer, criterion, clip):
         torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
         optimizer.step()
         epoch_loss += loss.item()
-        print('step :', i, ' , loss :', loss.item())
+        print('step :', round((i/len(iterator)) * 100, 2),  '% , loss :', loss.item())
 
     return epoch_loss / len(iterator)
 
@@ -97,8 +97,8 @@ def run(total_epoch, best_loss):
 
         if valid_loss < best_loss:
             best_loss = valid_loss
-            torch.save(model.state_dict(), 'model.pt')
+            torch.save(model.state_dict(), 'model-{0}.pt'.format(valid_loss))
 
-        print(f'Epoch: {epoch + 1:02} | Time: {epoch_mins}m {epoch_secs}s')
+        print(f'Epoch: {step + 1} | Time: {epoch_mins}m {epoch_secs}s')
         print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
         print(f'\t Val. Loss: {valid_loss:.3f} |  Val. PPL: {math.exp(valid_loss):7.3f}')
