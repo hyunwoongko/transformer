@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ffd1156-c99e-479e-8870-5e560fdecbc6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/model/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model/transformer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -238,7 +240,7 @@
       <workItem from="1572341304937" duration="1240000" />
       <workItem from="1572411521312" duration="3709000" />
       <workItem from="1572505372467" duration="659000" />
-      <workItem from="1576602589555" duration="15293000" />
+      <workItem from="1576602589555" duration="16720000" />
     </task>
     <servers />
   </component>
