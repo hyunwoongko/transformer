@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ffd1156-c99e-479e-8870-5e560fdecbc6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/models/layers/layer_norm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/layers/position_wise_feed_forward.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/blocks/decoder_layer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model/decoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model/encoder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model/transformer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/blocks/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/blocks/encoder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/blocks/decoder.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/blocks/encoder.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/blocks/encoder_layer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/layers/multi_head_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/layers/multi_head_attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/layers/scale_dot_product_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/layers/scale_dot_product_attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/transformer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/layers/position_wise_feed_forward.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/layers/position_wise_feed_forward.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/transformer.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,17 +68,17 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Github\Attention is All you need\data" />
-      <recent name="C:\Users\User\Github\Attention is All you need\models\embedding" />
-      <recent name="C:\Users\User\Github\Transformer\src\model\other_layers" />
-      <recent name="C:\Users\User\Github\Transformer\src\model\layer" />
-      <recent name="C:\Users\User\Github\Transformer\src\model\sub_layer" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Github\Attention is All you need" />
       <recent name="C:\Users\User\Github\Transformer\src\model" />
       <recent name="C:\Users\User\Github\Transformer\src\data" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Github\Transformer\models\model" />
+      <recent name="C:\Users\User\Github\Transformer\models\blocks" />
+      <recent name="C:\Users\User\Github\Transformer\models" />
+      <recent name="C:\Users\User\Github\Transformer\models\layers" />
+      <recent name="C:\Users\User\Github\Attention is All you need\data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,7 +250,7 @@
       <workItem from="1572341304937" duration="1240000" />
       <workItem from="1572411521312" duration="3709000" />
       <workItem from="1572505372467" duration="659000" />
-      <workItem from="1576602589555" duration="5622000" />
+      <workItem from="1576602589555" duration="13339000" />
     </task>
     <servers />
   </component>
@@ -269,7 +273,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Test$scale_dot_attention.coverage" NAME="scale_dot_attention Coverage Results" MODIFIED="1566325245567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attention" />
     <SUITE FILE_PATH="coverage/Attention_is_All_you_need$visuialization.coverage" NAME="visuialization Coverage Results" MODIFIED="1571744267842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models/embedding" />
-    <SUITE FILE_PATH="coverage/Transformer$main.coverage" NAME="main Coverage Results" MODIFIED="1576608197976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Transformer$main.coverage" NAME="main Coverage Results" MODIFIED="1576638445937" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Attention_is_All_you_need$positional_encoding.coverage" NAME="positional_encoding Coverage Results" MODIFIED="1571926946015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models/embedding" />
     <SUITE FILE_PATH="coverage/Transformer$train__1_.coverage" NAME="train (1) Coverage Results" MODIFIED="1576602980912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Attention_is_All_you_need$positional_encoding__1_.coverage" NAME="positional_encoding (1) Coverage Results" MODIFIED="1572256243488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models/embedding" />

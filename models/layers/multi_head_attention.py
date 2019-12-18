@@ -26,6 +26,7 @@ class MultiHeadAttention(nn.Module):
         q, k, v = self.project(q), self.project(k), self.project(v)
 
         # 3, do scale dot product to compute similarity
+
         out, attention = self.attention(q, k, v, mask=mask)
         out = self.concat(out)
 

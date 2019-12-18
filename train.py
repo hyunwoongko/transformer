@@ -3,18 +3,32 @@
 @when : 2019-10-22
 @homepage : https://github.com/gusdnd852
 """
+import math
 import time
+
 from torch import nn
 from torch.optim import Adam
 
-from data import *
 from conf import *
-from models.transformer import Transformer
+from data import *
+from models.model.transformer import Transformer
 from util.epoch_timer import epoch_time
 from util.lr_scheduler import LRScheduler
-import math
 
-model = Transformer(d_model=d_model,
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
+
+def initialize_weights(m):
+    if hasattr(m, 'weight') and m.weight.dim() > 1:
+        nn.init.xavier_uniform_(m.weight.data)
+
+
+model = Transformer(src_pad_idx=src_pad_idx,
+                    trg_pad_idx=trg_pad_idx,
+                    trg_sos_idx=trg_sos_idx,
+                    d_model=d_model,
                     enc_voc_size=enc_voc_size,
                     dec_voc_size=dec_voc_size,
                     max_len=max_len,
@@ -24,9 +38,11 @@ model = Transformer(d_model=d_model,
                     drop_prob=drop_prob,
                     device=device).to(device)
 
+print(f'The model has {count_parameters(model):,} trainable parameters')
+model.apply(initialize_weights)
 optimizer = Adam(model.parameters(), lr=init_lr, weight_decay=weight_decay)
 optimizer = LRScheduler(d_model=d_model, factor=factor, warmup=warmup, optimizer=optimizer)
-criterion = nn.CrossEntropyLoss(ignore_index=pad_idx)
+criterion = nn.CrossEntropyLoss(ignore_index=src_pad_idx)
 
 
 def train(model, iterator, optimizer, criterion, clip):
@@ -47,6 +63,7 @@ def train(model, iterator, optimizer, criterion, clip):
         torch.nn.utils.clip_grad_norm_(model.parameters(), clip)
         optimizer.step()
         epoch_loss += loss.item()
+        print('step :', i, ' , loss :', loss.item())
 
     return epoch_loss / len(iterator)
 
