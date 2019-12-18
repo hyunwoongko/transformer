@@ -87,17 +87,28 @@ def evaluate(model, iterator, criterion):
 
 
 def run(total_epoch, best_loss):
+    train_losses, test_losses = [], []
     for step in range(total_epoch):
         start_time = time.time()
         train_loss = train(model, train_iter, optimizer, criterion, clip)
         valid_loss = evaluate(model, valid_iter, criterion)
         end_time = time.time()
 
+        train_losses.append(train_loss)
+        test_losses.append(valid_loss)
         epoch_mins, epoch_secs = epoch_time(start_time, end_time)
 
         if valid_loss < best_loss:
             best_loss = valid_loss
             torch.save(model.state_dict(), 'saved/model-{0}.pt'.format(valid_loss))
+
+        f = open('result/train.txt', 'w')
+        f.write(str(train_losses))
+        f.close()
+
+        f = open('result/test.txt', 'w')
+        f.write(str(test_losses))
+        f.close()
 
         print(f'Epoch: {step + 1} | Time: {epoch_mins}m {epoch_secs}s')
         print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
