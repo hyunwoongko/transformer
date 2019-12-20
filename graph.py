@@ -15,7 +15,7 @@ def read(name):
     file = re.sub('\\]', '', file)
     f.close()
 
-    return [float(i) for idx, i in enumerate(file.split(',')) if idx <= 150]
+    return [float(i) for idx, i in enumerate(file.split(','))]
 
 
 def draw():

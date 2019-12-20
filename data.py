@@ -8,7 +8,7 @@ from util.data_loader import DataLoader
 from util.tokenizer import Tokenizer
 
 tokenizer = Tokenizer()
-loader = DataLoader(ext=('.de', '.en'),
+loader = DataLoader(ext=('.en', '.de'),
                     tokenize_en=tokenizer.tokenize_en,
                     tokenize_de=tokenizer.tokenize_de,
                     init_token='<sos>',

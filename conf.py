@@ -14,15 +14,16 @@ max_len = 50
 d_model = 512
 n_layers = 6
 n_heads = 8
-ffn_hidden = 256
+ffn_hidden = 2048
 drop_prob = 0.1
 
 # optimizer parameter setting
-init_lr = 1e-4
-factor = 0.8
+init_lr = 1e-5
+factor = 0.9
+min_lr = init_lr * 1e-12
 patience = 10
-warmup = 5
+warmup = 100
 weight_decay = 5e-4
-epoch = 2000
+epoch = 1000
 clip = 1
 inf = float('inf')

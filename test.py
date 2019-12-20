@@ -3,6 +3,8 @@
 @when : 2019-12-19
 @homepage : https://github.com/gusdnd852
 """
+import os
+
 from data import *
 
 from models.model.transformer import Transformer
@@ -17,14 +19,13 @@ model = Transformer(src_pad_idx=src_pad_idx,
                     ffn_hidden=ffn_hidden,
                     n_head=n_heads,
                     n_layers=n_layers,
-                    drop_prob=drop_prob,
+                    drop_prob=0.00,
                     device=device).to(device)
 
 
 def test_model(num_examples):
-    iterator = test_iter
+    iterator = train_iter
     model.load_state_dict(torch.load("./saved/model-saved.pt"))
-    model.eval()
 
     with torch.no_grad():
         for i, batch in enumerate(iterator):
@@ -56,4 +57,4 @@ def idx_to_word(x, vocab):
 
 
 if __name__ == '__main__':
-    test_model(num_examples=3)
+    test_model(num_examples=30)
