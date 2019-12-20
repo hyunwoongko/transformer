@@ -9,8 +9,7 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 ![table](image/train_result.jpg)
 <br>
 
-performance is not good now <br>
-i'm training now... with new configuration
+training now...
 <br><br>
 
 ## Reference
