@@ -2,4 +2,4 @@
 data/
 venv/
 .data/
-saved/
+*.pt

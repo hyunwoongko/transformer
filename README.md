@@ -6,10 +6,9 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 <br><br>
 
 ## Experiments
-![table](image/train_result.jpg)
+![table](saved/train_result.jpg)
 <br>
 
-training now...
 <br><br>
 
 ## Reference

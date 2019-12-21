@@ -57,4 +57,4 @@ def idx_to_word(x, vocab):
 
 
 if __name__ == '__main__':
-    test_model(num_examples=30)
+    test_model(num_examples=20)
