@@ -375,7 +375,7 @@ Small model's parameter setting is same with original paper except d_k
 
 ### 2.2 Transformer - Big
 * total parameters = 232,082,095
-* model size = 197.2MB
+* model size = 906.6MB
 
 #### 2.2.1 configuration
 
