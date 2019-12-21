@@ -18,21 +18,25 @@ def read(name):
     return [float(i) for idx, i in enumerate(file.split(','))]
 
 
-def draw():
-    train = read('./result/train.txt')
-    test = read('./result/test.txt')
+def draw(mode):
+    if mode == 'loss':
+        train = read('./result/train_loss.txt')
+        test = read('./result/test_loss.txt')
+        plt.plot(train, 'r', label='train')
+        plt.plot(test, 'b', label='validation')
 
-    plt.plot(train, 'r', label='train')
-    plt.plot(test, 'b', label='validation')
+    elif mode == 'bleu':
+        bleu = read('./result/bleu.txt')
+        plt.plot(bleu, 'b', label='bleu score')
 
     plt.xlabel('epoch')
-    plt.ylabel('loss')
+    plt.ylabel(mode)
     plt.title('training result')
     plt.grid(True, which='both', axis='both')
     plt.legend(loc='lower left')
-
     plt.show()
 
 
 if __name__ == '__main__':
-    draw()
+    draw(mode='loss')
+    draw(mode='bleu')
