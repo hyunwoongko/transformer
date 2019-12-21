@@ -3,16 +3,14 @@
 @when : 2019-12-19
 @homepage : https://github.com/gusdnd852
 """
-import os
+
+import math
+from collections import Counter
+
+import numpy as np
 
 from data import *
-
 from models.model.transformer import Transformer
-
-from collections import Counter
-import math
-import numpy as np
-import subprocess
 
 
 def count_parameters(model):
@@ -22,13 +20,13 @@ def count_parameters(model):
 model = Transformer(src_pad_idx=src_pad_idx,
                     trg_pad_idx=trg_pad_idx,
                     trg_sos_idx=trg_sos_idx,
-                    d_model=512,
+                    d_model=d_model,
                     enc_voc_size=enc_voc_size,
                     dec_voc_size=dec_voc_size,
                     max_len=max_len,
-                    ffn_hidden=2048,
+                    ffn_hidden=ffn_hidden,
                     n_head=n_heads,
-                    n_layers=6,
+                    n_layers=n_layers,
                     drop_prob=0.00,
                     device=device).to(device)
 
@@ -37,7 +35,7 @@ print(f'The model has {count_parameters(model):,} trainable parameters')
 
 def test_model(num_examples):
     iterator = test_iter
-    model.load_state_dict(torch.load("./saved/transformer-small/model-saved.pt"))
+    model.load_state_dict(torch.load("./saved/model-saved.pt"))
 
     with torch.no_grad():
         batch_bleu = []
