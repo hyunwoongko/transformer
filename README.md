@@ -385,7 +385,7 @@ I follow original paper's parameter settings. (below) <br>
 * batch_size = 32
 * max_len = 50
 * d_model = 1024
-* n_layers = 8
+* n_layers = 6
 * n_heads = 8
 * ffn_hidden = 4096
 * drop_prob = 0.3
