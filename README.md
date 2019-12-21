@@ -51,8 +51,8 @@ class PositionalEncoding(nn.Module):
         # [batch_size = 128, seq_len = 30]
 
         return self.encoding[:seq_len, :]
-    # [seq_len = 30, d_model = 512]
-    # it will add with tok_emb : [128, 30, 512]
+        # [seq_len = 30, d_model = 512]
+        # it will add with tok_emb : [128, 30, 512]         
 
 ```
 <br><br>
