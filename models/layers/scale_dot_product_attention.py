@@ -32,7 +32,8 @@ class ScaleDotProductAttention(nn.Module):
         score = (q @ k_t) / math.sqrt(d_model)
 
         # 2. apply masking (opt)
-        if mask is not None: score = score.masked_fill(mask == 0, -e)
+        if mask is not None:
+            score = score.masked_fill(mask == 0, -e)
 
         # 3. pass them softmax to make [0, 1] range
         score = self.softmax(score)

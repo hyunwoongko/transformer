@@ -72,6 +72,7 @@ class MultiHeadAttention(nn.Module):
         self.w_q = nn.Linear(d_model, d_model)
         self.w_k = nn.Linear(d_model, d_model)
         self.w_v = nn.Linear(d_model, d_model)
+        self.w_concat = nn.Linear(d_model, d_model)
 
     def forward(self, q, k, v, mask=None):
         # 1. dot product with weight matrices
@@ -80,11 +81,14 @@ class MultiHeadAttention(nn.Module):
         # 2. split tensor by number of heads
         q, k, v = self.project(q), self.project(k), self.project(v)
 
-        # 3, do scale dot product to compute similarity
+        # 3. do scale dot product to compute similarity
         out, attention = self.attention(q, k, v, mask=mask)
+        
+        # 4. concat and pass to linear layer
         out = self.concat(out)
+        out = self.w_concat(out)
 
-        # 4. visualize attention map
+        # 5. visualize attention map
         # TODO : we should implement visualization
 
         return out
@@ -116,6 +120,7 @@ class MultiHeadAttention(nn.Module):
 
         tensor = tensor.view(batch_size, length, d_model)
         return tensor
+
 ```
 <br><br>
 
@@ -148,7 +153,8 @@ class ScaleDotProductAttention(nn.Module):
         score = (q @ k_t) / math.sqrt(d_model)
 
         # 2. apply masking (opt)
-        if mask is not None: score = score.masked_fill(mask == 0, -e)
+        if mask is not None: 
+            score = score.masked_fill(mask == 0, -e)
 
         # 3. pass them softmax to make [0, 1] range
         score = self.softmax(score)
