@@ -25,11 +25,10 @@ class ScaleDotProductAttention(nn.Module):
         # input is 4 dimension tensor
         # [batch_size, head, length, d_tensor]
         batch_size, head, length, d_tensor = k.size()
-        d_model = head * d_tensor
 
         # 1. dot product Query with Key^T to compute similarity
-        k_t = k.view(batch_size, head, d_tensor, length)
-        score = (q @ k_t) / math.sqrt(d_model)
+        k_t = k.view(batch_size, head, d_tensor, length)  # transpose
+        score = (q @ k_t) / math.sqrt(d_tensor)  # scaled dot product
 
         # 2. apply masking (opt)
         if mask is not None:

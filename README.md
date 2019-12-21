@@ -53,7 +53,6 @@ class PositionalEncoding(nn.Module):
         return self.encoding[:seq_len, :]
         # [seq_len = 30, d_model = 512]
         # it will add with tok_emb : [128, 30, 512]         
-
 ```
 <br><br>
 
@@ -120,7 +119,6 @@ class MultiHeadAttention(nn.Module):
 
         tensor = tensor.view(batch_size, length, d_model)
         return tensor
-
 ```
 <br><br>
 
@@ -146,14 +144,13 @@ class ScaleDotProductAttention(nn.Module):
         # input is 4 dimension tensor
         # [batch_size, head, length, d_tensor]
         batch_size, head, length, d_tensor = k.size()
-        d_model = head * d_tensor
 
         # 1. dot product Query with Key^T to compute similarity
-        k_t = k.view(batch_size, head, d_tensor, length)
-        score = (q @ k_t) / math.sqrt(d_model)
+        k_t = k.view(batch_size, head, d_tensor, length)  # transpose
+        score = (q @ k_t) / math.sqrt(d_tensor)  # scaled dot product
 
         # 2. apply masking (opt)
-        if mask is not None: 
+        if mask is not None:
             score = score.masked_fill(mask == 0, -e)
 
         # 3. pass them softmax to make [0, 1] range
@@ -186,7 +183,6 @@ class LayerNorm(nn.Module):
         out = (x - mean) / (std + self.eps)
         out = self.gamma * out + self.beta
         return out
-
 ```
 <br><br>
 
@@ -211,7 +207,6 @@ class PositionwiseFeedForward(nn.Module):
         x = self.dropout(x)
         x = self.linear2(x)
         return x
-
 ```
 <br><br>
 
@@ -220,7 +215,6 @@ class PositionwiseFeedForward(nn.Module):
 ![model](image/enc_dec.jpg)
     
 ```python
-
 class EncoderLayer(nn.Module):
 
     def __init__(self, d_model, ffn_hidden, n_head, drop_prob):
@@ -269,6 +263,7 @@ class Encoder(nn.Module):
             x = layer(x, s_mask)
 
         return x
+
 
 class DecoderLayer(nn.Module):
 
@@ -332,7 +327,6 @@ class Decoder(nn.Module):
         output = self.linear(trg)
 
         return output
-
 ```
 <br><br>
 
@@ -432,6 +426,3 @@ Training now ...
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
-
-
-

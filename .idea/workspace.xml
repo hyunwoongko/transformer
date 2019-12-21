@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ffd1156-c99e-479e-8870-5e560fdecbc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/layers/scale_dot_product_attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/layers/scale_dot_product_attention.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result/train.txt" afterDir="false" />
     </list>
@@ -247,7 +247,7 @@
       <workItem from="1572411521312" duration="3709000" />
       <workItem from="1572505372467" duration="659000" />
       <workItem from="1576602589555" duration="59963000" />
-      <workItem from="1576812285766" duration="44541000" />
+      <workItem from="1576812285766" duration="44800000" />
     </task>
     <servers />
   </component>
