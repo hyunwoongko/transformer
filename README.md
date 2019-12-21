@@ -4,6 +4,7 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 <br><br>
 ![model](image/model.png)
 <br><br>
+
 ## 1. Implementations
 
 ### 1.1 Positional Encoding
@@ -365,12 +366,10 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 * Minimum Validation Loss = 3.2048025131225586 
 <br><br>
 
-Small model's parameter setting is same with original paper except d_k
-
-| Model | Dataset | Parameters | d_k | BLEU Score |
-|:---:|:---:|:---:|:---:|:---:|
-| Original Paper's | WMT14 EN-DE | 65 x 10^6 | 64 |25.8 |
-| My Implementation | Multi30K EN-DE | 50 x 10^7 | 512 | 26.4 |
+| Model | Dataset | Parameters | BLEU Score |
+|:---:|:---:|:---:|:---:|
+| Original Paper's | WMT14 EN-DE | 65 x 10^6 | 25.8 |
+| My Implementation | Multi30K EN-DE | 50 x 10^7 | 26.4 |
 
 <br><br>
 
