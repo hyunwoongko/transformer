@@ -363,6 +363,7 @@ I follow original paper's parameter settings. (below) <br>
 
 #### 2.1.2 Training Result
 
+![image](saved/transformer-base/train_result.jpg)
 * Minimum Training Loss = 2.852672759656864
 * Minimum Validation Loss = 3.2048025131225586 
 <br><br>
