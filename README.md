@@ -337,6 +337,7 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 ### 2.1 Transformer - Small
 * total parameters = 50,479,279
 * model size = 197.2MB
+* lr scheduling : ReduceLROnPlateau
 
 #### 2.1.1 configuration
 
@@ -376,6 +377,7 @@ Small model's parameter setting is same with original paper except d_k
 ### 2.2 Transformer - Big
 * total parameters = 232,082,095
 * model size = 906.6MB
+* lr scheduling : ReduceLROnPlateau
 
 #### 2.2.1 configuration
 
