@@ -342,8 +342,8 @@ I use Multi30K Dataset to train and evaluate model <br>
 You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 
 ### 2.1 Transformer - Small
-* total parameters = 50,479,279
-* model size = 197.2MB
+* total parameters = 69,919,919
+* model size = 273.2MB
 * lr scheduling : ReduceLROnPlateau
 
 #### 2.1.1 configuration
