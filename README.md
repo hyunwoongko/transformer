@@ -375,7 +375,7 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 | Model | Dataset | Parameters | BLEU Score |
 |:---:|:---:|:---:|:---:|
 | Original Paper's | WMT14 EN-DE | 65 x 10^6 | 25.8 |
-| My Implementation | Multi30K EN-DE | 50 x 10^7 | 26.4 |
+| My Implementation | Multi30K EN-DE | 69 x 10^7 | 26.4 |
 
 <br><br>
 
