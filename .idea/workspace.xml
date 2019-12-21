@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ffd1156-c99e-479e-8870-5e560fdecbc6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result/train.txt" afterDir="false" />
@@ -88,7 +89,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.train (1)">
+  <component name="RunManager" selected="Python.graph">
     <configuration name="conf" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Transformer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -201,8 +202,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.train (1)" />
         <item itemvalue="Python.graph" />
+        <item itemvalue="Python.train (1)" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.retrain" />
         <item itemvalue="Python.conf" />
@@ -246,7 +247,7 @@
       <workItem from="1572411521312" duration="3709000" />
       <workItem from="1572505372467" duration="659000" />
       <workItem from="1576602589555" duration="59963000" />
-      <workItem from="1576812285766" duration="43689000" />
+      <workItem from="1576812285766" duration="44541000" />
     </task>
     <servers />
   </component>
@@ -281,7 +282,7 @@
     <SUITE FILE_PATH="coverage/Attention_is_All_you_need$test.coverage" NAME="test Coverage Results" MODIFIED="1572274858947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Transformer$retrain.coverage" NAME="retrain Coverage Results" MODIFIED="1576903323667" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Transformer$data.coverage" NAME="data Coverage Results" MODIFIED="1566825693305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/Transformer$graph.coverage" NAME="graph Coverage Results" MODIFIED="1576921140638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Transformer$graph.coverage" NAME="graph Coverage Results" MODIFIED="1576922703655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Test$multi_head_attention.coverage" NAME="multi_head_attention Coverage Results" MODIFIED="1566335795746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/attention" />
     <SUITE FILE_PATH="coverage/Attention_is_All_you_need$transformer.coverage" NAME="transformer Coverage Results" MODIFIED="1572256877779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/Attention_is_All_you_need$train.coverage" NAME="train Coverage Results" MODIFIED="1572278248727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />

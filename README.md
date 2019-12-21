@@ -356,7 +356,7 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 * ffn_hidden = 2048
 * drop_prob = 0.1
 * init_lr = 1e-5
-* factor = 0.9
+* factor = 0.8
 * min_lr = init_lr * 1e-12
 * patience = 10
 * warmup = 100
@@ -394,7 +394,7 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 * ffn_hidden = 4096
 * drop_prob = 0.3
 * init_lr = 1e-5
-* factor = 0.9
+* factor = 0.8
 * min_lr = init_lr * 1e-12
 * patience = 10
 * warmup = 300
