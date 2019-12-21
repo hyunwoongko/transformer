@@ -18,12 +18,12 @@ ffn_hidden = 4096
 drop_prob = 0.3
 
 # optimizer parameter setting
-init_lr = 1e-6
-factor = 0.8
+init_lr = 1e-5
+factor = 0.9
 min_lr = init_lr * 1e-12
-patience = 7
+patience = 10
 warmup = 300
-weight_decay = 5e-5
+weight_decay = 5e-4
 epoch = 2000
 clip = 1
 inf = float('inf')
