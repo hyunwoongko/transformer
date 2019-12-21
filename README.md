@@ -342,7 +342,7 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 
 #### 2.1.1 configuration
 
-* batch_size = 128
+* batch_size = 64
 * max_len = 50
 * d_model = 512
 * n_layers = 6
