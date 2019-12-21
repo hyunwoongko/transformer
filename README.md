@@ -352,12 +352,12 @@ I follow original paper's parameter settings. (below) <br>
 * n_heads = 8
 * ffn_hidden = 2048
 * drop_prob = 0.1
-* init_lr = 1e-6
+* init_lr = 1e-5
 * factor = 0.8
 * min_lr = init_lr * 1e-12
 * patience = 7
 * warmup = 100
-* weight_decay = 1e-4
+* weight_decay = 1e-3
 * epoch = 1000
 * clip = 1
 
@@ -389,12 +389,12 @@ I follow original paper's parameter settings. (below) <br>
 * n_heads = 16
 * ffn_hidden = 4096
 * drop_prob = 0.3
-* init_lr = 1e-6
+* init_lr = 1e-5
 * factor = 0.8
 * min_lr = init_lr * 1e-12
 * patience = 7
 * warmup = 300
-* weight_decay = 1e-4
+* weight_decay = 1e-3
 * epoch = 3000
 * clip = 1
 

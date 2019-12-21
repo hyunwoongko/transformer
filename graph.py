@@ -24,16 +24,18 @@ def draw(mode):
         test = read('./result/test_loss.txt')
         plt.plot(train, 'r', label='train')
         plt.plot(test, 'b', label='validation')
+        plt.legend(loc='lower left')
+
 
     elif mode == 'bleu':
         bleu = read('./result/bleu.txt')
         plt.plot(bleu, 'b', label='bleu score')
+        plt.legend(loc='lower right')
 
     plt.xlabel('epoch')
     plt.ylabel(mode)
     plt.title('training result')
     plt.grid(True, which='both', axis='both')
-    plt.legend(loc='lower left')
     plt.show()
 
 

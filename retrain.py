@@ -151,7 +151,7 @@ def run(total_epoch, best_loss):
         f.write(str(test_losses))
         f.close()
 
-        print(f'Epoch: {step + 1} | Time: {epoch_mins}m {epoch_secs}s')
+        print(f'Epoch: {step + 1 + train_count} | Time: {epoch_mins}m {epoch_secs}s')
         print(f'\tTrain Loss: {train_loss:.3f} | Train PPL: {math.exp(train_loss):7.3f}')
         print(f'\tVal Loss: {valid_loss:.3f} |  Val PPL: {math.exp(valid_loss):7.3f}')
         print(f'\tBLEU Score: {bleu:.3f}')
