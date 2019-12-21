@@ -333,16 +333,19 @@ class Decoder(nn.Module):
 ## 2. Experiments
 
 I use Multi30K Dataset to train and evaluate model <br>
-You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
+You can check detail of dataset [here](https://arxiv.org/abs/1605.00459) <br>
+I follow original paper's parameter settings. (below) <br>
 
-### 2.1 Transformer - Small
+![conf](image/transformer-model-size.jpg)
+### 2.1 Transformer - Baseline
+
 * total parameters = 69,919,919
 * model size = 273.2MB
 * lr scheduling : ReduceLROnPlateau
 
 #### 2.1.1 configuration
 
-* batch_size = 128
+* batch_size = 64
 * max_len = 50
 * d_model = 512
 * n_layers = 6
@@ -358,10 +361,8 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 * epoch = 1000
 * clip = 1
 
-
 #### 2.1.2 Training Result
-![table](saved/transformer-small/train_result.jpg)
-<br><br>
+
 * Minimum Training Loss = 2.852672759656864
 * Minimum Validation Loss = 3.2048025131225586 
 <br><br>
