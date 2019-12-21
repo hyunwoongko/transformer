@@ -386,7 +386,7 @@ I follow original paper's parameter settings. (below) <br>
 * max_len = 50
 * d_model = 1024
 * n_layers = 6
-* n_heads = 8
+* n_heads = 16
 * ffn_hidden = 4096
 * drop_prob = 0.3
 * init_lr = 1e-5
@@ -395,7 +395,7 @@ I follow original paper's parameter settings. (below) <br>
 * patience = 10
 * warmup = 300
 * weight_decay = 5e-4
-* epoch = 2000
+* epoch = 3000
 * clip = 1
 
 
