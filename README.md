@@ -8,8 +8,6 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 
 ### 1.1 Positional Encoding
 
-![model](image/positional_encoding-2.jpg)
-
 ![model](image/positional_encoding.jpg)
     
     
@@ -60,7 +58,6 @@ class PositionalEncoding(nn.Module):
 
 ### 1.2 Multi-Head Attention
 
-![model](image/multi_head_attention-2.jpg)
 
 ![model](image/multi_head_attention.jpg)
 
@@ -122,8 +119,6 @@ class MultiHeadAttention(nn.Module):
 <br><br>
 
 ### 1.3 Scale Dot Product Attention
-
-![model](image/scale_dot_product_attention-2.jpg)
 
 ![model](image/scale_dot_product_attention.jpg)
 
@@ -367,6 +362,7 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459)
 <br><br>
 * Minimum Training Loss = 2.852672759656864
 * Minimum Validation Loss = 3.2048025131225586 
+<br><br>
 
 Small model's parameter setting is same with original paper except d_k
 
@@ -374,6 +370,7 @@ Small model's parameter setting is same with original paper except d_k
 |:---:|:---:|:---:|:---:|:---:|
 | Original Paper's | WMT14 EN-DE | 65 x 10^6 | 64 |25.8 |
 | My Implementation | Multi30K EN-DE | 50 x 10^7 | 512 | 26.4 |
+
 <br><br>
 
 ### 2.2 Transformer - Big

@@ -4,11 +4,13 @@
     <list default="true" id="3ffd1156-c99e-479e-8870-5e560fdecbc6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/train_result.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/layer_norm.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/layer_norm.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/multi_head_attention.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/multi_head_attention.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/positional_encoding-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/positional_encoding-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/positional_encoding.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/positional_encoding.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/scale_dot_product_attention.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/scale_dot_product_attention.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/result/train.txt" beforeDir="false" afterPath="$PROJECT_DIR$/result/train.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +252,7 @@
       <workItem from="1572411521312" duration="3709000" />
       <workItem from="1572505372467" duration="659000" />
       <workItem from="1576602589555" duration="59963000" />
-      <workItem from="1576812285766" duration="40858000" />
+      <workItem from="1576812285766" duration="41469000" />
     </task>
     <servers />
   </component>
