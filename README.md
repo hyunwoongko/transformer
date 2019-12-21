@@ -339,25 +339,25 @@ I follow original paper's parameter settings. (below) <br>
 ![conf](image/transformer-model-size.jpg)
 ### 2.1 Transformer - Baseline
 
-* total parameters = 69,919,919
-* model size = 273.2MB
+* total parameters = 55,207,087
+* model size = 215.7MB
 * lr scheduling : ReduceLROnPlateau
 
 #### 2.1.1 configuration
 
-* batch_size = 64
+* batch_size = 128
 * max_len = 50
 * d_model = 512
 * n_layers = 6
 * n_heads = 8
 * ffn_hidden = 2048
 * drop_prob = 0.1
-* init_lr = 1e-5
+* init_lr = 1e-6
 * factor = 0.8
 * min_lr = init_lr * 1e-12
-* patience = 10
+* patience = 7
 * warmup = 100
-* weight_decay = 5e-4
+* weight_decay = 1e-4
 * epoch = 1000
 * clip = 1
 
@@ -371,7 +371,7 @@ I follow original paper's parameter settings. (below) <br>
 | Model | Dataset | Parameters | BLEU Score |
 |:---:|:---:|:---:|:---:|
 | Original Paper's | WMT14 EN-DE | 65 x 10^6 | 25.8 |
-| My Implementation | Multi30K EN-DE | 69 x 10^7 | 26.4 |
+| My Implementation | Multi30K EN-DE | 55 x 10^7 | 26.4 |
 
 <br><br>
 
@@ -389,12 +389,12 @@ I follow original paper's parameter settings. (below) <br>
 * n_heads = 16
 * ffn_hidden = 4096
 * drop_prob = 0.3
-* init_lr = 1e-5
+* init_lr = 1e-6
 * factor = 0.8
 * min_lr = init_lr * 1e-12
-* patience = 10
+* patience = 7
 * warmup = 300
-* weight_decay = 5e-4
+* weight_decay = 1e-4
 * epoch = 3000
 * clip = 1
 
