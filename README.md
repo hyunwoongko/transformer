@@ -346,20 +346,21 @@ I follow original paper's parameter settings. (below) <br>
 #### 2.1.1 configuration
 
 * batch_size = 128
-* max_len = 50
+* max_len = 256
 * d_model = 512
 * n_layers = 6
 * n_heads = 8
 * ffn_hidden = 2048
 * drop_prob = 0.1
-* init_lr = 1e-5
-* factor = 0.8
+* init_lr = 0.1
+* factor = 0.9
 * min_lr = init_lr * 1e-12
-* patience = 7
+* patience = 10
 * warmup = 100
-* weight_decay = 1e-3
+* adam_eps = 5e-9
 * epoch = 1000
 * clip = 1
+* weight_decay = 5e-4
 
 #### 2.1.2 Training Result
 
@@ -383,20 +384,21 @@ I follow original paper's parameter settings. (below) <br>
 #### 2.2.1 configuration
 
 * batch_size = 32
-* max_len = 50
+* max_len = 256
 * d_model = 1024
 * n_layers = 6
 * n_heads = 16
 * ffn_hidden = 4096
 * drop_prob = 0.3
-* init_lr = 1e-5
-* factor = 0.8
+* init_lr = 0.1
+* factor = 0.9
 * min_lr = init_lr * 1e-12
-* patience = 7
+* patience = 10
 * warmup = 300
-* weight_decay = 1e-3
+* adam_eps = 5e-9
 * epoch = 3000
 * clip = 1
+* weight_decay = 5e-4
 
 
 #### 2.2.2 Training Result

@@ -4,7 +4,7 @@
 @homepage : https://github.com/gusdnd852
 """
 from torchtext.data import Field, BucketIterator
-from torchtext.datasets import Multi30k
+from torchtext.datasets.translation import Multi30k
 
 
 class DataLoader:

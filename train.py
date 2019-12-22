@@ -21,7 +21,7 @@ def count_parameters(model):
 
 def initialize_weights(m):
     if hasattr(m, 'weight') and m.weight.dim() > 1:
-        nn.init.kaiming_normal_(m.weight.data)
+        nn.init.kaiming_uniform(m.weight.data)
 
 
 model = Transformer(src_pad_idx=src_pad_idx,
@@ -41,7 +41,8 @@ print(f'The model has {count_parameters(model):,} trainable parameters')
 model.apply(initialize_weights)
 optimizer = Adam(params=model.parameters(),
                  lr=init_lr,
-                 weight_decay=weight_decay)
+                 weight_decay=weight_decay,
+                 eps=adam_eps)
 
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer=optimizer,
                                                  verbose=True,
