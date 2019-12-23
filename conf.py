@@ -21,7 +21,6 @@ drop_prob = 0.1
 init_lr = 1e-5
 factor = 0.9
 adam_eps = 5e-9
-min_lr = init_lr * 1e-12
 patience = 10
 warmup = 100
 epoch = 1000
