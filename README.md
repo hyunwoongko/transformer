@@ -337,7 +337,7 @@ You can check detail of dataset [here](https://arxiv.org/abs/1605.00459) <br>
 I follow original paper's parameter settings. (below) <br>
 
 ![conf](image/transformer-model-size.jpg)
-### 2.1 Transformer - Baseline
+### 2.1 Model Specification
 
 * total parameters = 55,207,087
 * model size = 215.7MB
@@ -362,7 +362,7 @@ I follow original paper's parameter settings. (below) <br>
 * clip = 1
 * weight_decay = 5e-4
 
-#### 2.1.2 Training Result
+#### 2.2 Training Result
 
 ![image](saved/transformer-base/train_result.jpg)
 * Minimum Training Loss = 2.852672759656864
@@ -376,36 +376,6 @@ I follow original paper's parameter settings. (below) <br>
 
 <br><br>
 
-### 2.2 Transformer - Big
-* total parameters = 232,082,095
-* model size = 906.6MB
-* lr scheduling : ReduceLROnPlateau
-
-#### 2.2.1 configuration
-
-* batch_size = 32
-* max_len = 256
-* d_model = 1024
-* n_layers = 6
-* n_heads = 16
-* ffn_hidden = 4096
-* drop_prob = 0.3
-* init_lr = 0.1
-* factor = 0.9
-* min_lr = init_lr * 1e-12
-* patience = 10
-* warmup = 300
-* adam_eps = 5e-9
-* epoch = 3000
-* clip = 1
-* weight_decay = 5e-4
-
-
-#### 2.2.2 Training Result
-
-Training now ...
-
-<br><br>
 
 ## 3. Reference
 |Reference|
