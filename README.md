@@ -361,6 +361,7 @@ I follow original paper's parameter settings. (below) <br>
 * epoch = 1000
 * clip = 1
 * weight_decay = 5e-4
+<br><br>
 
 ### 2.2 Training Result
 
