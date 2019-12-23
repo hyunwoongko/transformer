@@ -362,7 +362,7 @@ I follow original paper's parameter settings. (below) <br>
 * clip = 1
 * weight_decay = 5e-4
 
-#### 2.2 Training Result
+### 2.2 Training Result
 
 ![image](saved/transformer-base/train_result.jpg)
 * Minimum Training Loss = 2.852672759656864
