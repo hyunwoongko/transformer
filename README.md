@@ -369,10 +369,10 @@ I follow original paper's parameter settings. (below) <br>
 * Minimum Validation Loss = 3.2048025131225586 
 <br><br>
 
-| Model | Dataset | Parameters | BLEU Score |
-|:---:|:---:|:---:|:---:|
-| Original Paper's | WMT14 EN-DE | 65 x 10^6 | 25.8 |
-| My Implementation | Multi30K EN-DE | 55 x 10^7 | 26.4 |
+| Model | Dataset | BLEU Score |
+|:---:|:---:|:---:|
+| Original Paper's | WMT14 EN-DE | 25.8 |
+| My Implementation | Multi30K EN-DE | 26.4 |
 
 <br><br>
 
