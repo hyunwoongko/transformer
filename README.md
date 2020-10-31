@@ -29,7 +29,7 @@ class PositionalEncoding(nn.Module):
 
         # same size with input matrix (for adding with input matrix)
         self.encoding = torch.zeros(max_len, d_model, device=device)
-        self.encoding.requires_grad = False  # we don't need to grad
+        self.encoding.requires_grad = False  # we don't need to compute gradient
 
         pos = torch.arange(0, max_len, device=device)
         pos = pos.float().unsqueeze(dim=1)
@@ -78,7 +78,7 @@ class MultiHeadAttention(nn.Module):
         q, k, v = self.w_q(q), self.w_k(k), self.w_v(v)
 
         # 2. split tensor by number of heads
-        q, k, v = self.project(q), self.project(k), self.project(v)
+        q, k, v = self.split(q), self.split(k), self.split(v)
 
         # 3. do scale dot product to compute similarity
         out, attention = self.attention(q, k, v, mask=mask)
@@ -92,7 +92,7 @@ class MultiHeadAttention(nn.Module):
 
         return out
 
-    def project(self, tensor):
+    def split(self, tensor):
         """
         split tensor by number of head
 
