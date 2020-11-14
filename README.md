@@ -10,7 +10,7 @@ My own implementation Transformer model (Attention is All You Need - Google Brai
 ### 1.1 Positional Encoding
 
 ![model](image/positional_encoding.jpg)
-    
+   
     
 ```python
 class PositionalEncoding(nn.Module):
@@ -109,7 +109,7 @@ class MultiHeadAttention(nn.Module):
 
     def concat(self, tensor):
         """
-        inverse function of self.project(tensor : torch.Tensor)
+        inverse function of self.split(tensor : torch.Tensor)
 
         :param tensor: [batch_size, head, length, d_tensor]
         :return: [batch_size, length, d_model]
