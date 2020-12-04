@@ -387,7 +387,7 @@ I follow original paper's parameter settings. (below) <br>
 <br><br>
 
 ## 4. Licence
-    Copyright 2019 Hyunwoong Go.
+    Copyright 2019 Hyunwoong Ko.
     
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
