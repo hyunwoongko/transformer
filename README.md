@@ -378,11 +378,9 @@ I follow original paper's parameter settings. (below) <br>
 
 
 ## 3. Reference
-|Reference|
-|-----|
-|[Attention is All You Need, 2017 - Google](https://arxiv.org/abs/1706.03762)|
-|[The Illustrated Transformer - Jay Alammar](http://jalammar.github.io/illustrated-transformer/)|
-|[Data & Optimization Code Reference - Bentrevett](https://github.com/bentrevett/pytorch-seq2seq/)|
+- [Attention is All You Need, 2017 - Google](https://arxiv.org/abs/1706.03762)
+- [The Illustrated Transformer - Jay Alammar](http://jalammar.github.io/illustrated-transformer/)
+- [Data & Optimization Code Reference - Bentrevett](https://github.com/bentrevett/pytorch-seq2seq/)
 
 <br><br>
 
