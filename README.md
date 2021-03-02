@@ -227,9 +227,9 @@ class EncoderLayer(nn.Module):
         self.norm2 = LayerNorm(d_model=d_model)
         self.dropout2 = nn.Dropout(p=drop_prob)
 
-    def forward(self, x, s_mask):
+    def forward(self, x, src_mask):
         _x = x
-        x = self.attention(x, x, x, mask=s_mask)
+        x = self.attention(x, x, x, mask=src_mask)
         x = self.norm1(x + _x)
         x = self.dropout1(x)
 
@@ -258,11 +258,11 @@ class Encoder(nn.Module):
                                                   drop_prob=drop_prob)
                                      for _ in range(n_layers)])
 
-    def forward(self, x, s_mask):
+    def forward(self, x, src_mask):
         x = self.emb(x)
 
         for layer in self.layers:
-            x = layer(x, s_mask)
+            x = layer(x, src_mask)
 
         return x
 ```
@@ -285,15 +285,15 @@ class DecoderLayer(nn.Module):
         self.norm3 = LayerNorm(d_model=d_model)
         self.dropout3 = nn.Dropout(p=drop_prob)
 
-    def forward(self, dec, enc, t_mask, s_mask):
+    def forward(self, dec, enc, trg_mask, src_mask):
         _x = dec
-        x = self.self_attention(dec, dec, dec, mask=t_mask)
+        x = self.self_attention(dec, dec, dec, mask=trg_mask)
         x = self.norm1(x + _x)
         x = self.dropout1(x)
 
         if enc is not None:
             _x = x
-            x = self.enc_dec_attention(x, enc, enc, mask=s_mask)
+            x = self.enc_dec_attention(x, enc, enc, mask=src_mask)
             x = self.norm2(x + _x)
             x = self.dropout2(x)
 
@@ -324,11 +324,11 @@ class Decoder(nn.Module):
 
         self.linear = nn.Linear(d_model, dec_voc_size)
 
-    def forward(self, trg, enc_src, trg_mask, src_mask):
+    def forward(self, trg, src, trg_mask, src_mask):
         trg = self.emb(trg)
 
         for layer in self.layers:
-            trg = layer(trg, enc_src, trg_mask, src_mask)
+            trg = layer(trg, src, trg_mask, src_mask)
 
         output = self.linear(trg)
 
