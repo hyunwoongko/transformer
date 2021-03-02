@@ -238,8 +238,8 @@ class EncoderLayer(nn.Module):
         x = self.norm2(x + _x)
         x = self.dropout2(x)
         return x
-
-
+```
+```python
 class Encoder(nn.Module):
 
     def __init__(self, enc_voc_size, max_len, d_model, ffn_hidden, n_head, n_layers, drop_prob, device):
@@ -263,8 +263,8 @@ class Encoder(nn.Module):
             x = layer(x, s_mask)
 
         return x
-
-
+```
+```python
 class DecoderLayer(nn.Module):
 
     def __init__(self, d_model, ffn_hidden, n_head, drop_prob):
@@ -299,8 +299,8 @@ class DecoderLayer(nn.Module):
         x = self.dropout3(x)
 
         return x
-
-
+```
+```python        
 class Decoder(nn.Module):
     def __init__(self, dec_voc_size, max_len, d_model, ffn_hidden, n_head, n_layers, drop_prob, device):
         super().__init__()
