@@ -179,6 +179,7 @@ class LayerNorm(nn.Module):
     def forward(self, x):
         mean = x.mean(-1, keepdim=True)
         std = x.std(-1, keepdim=True)
+        # -1 means last dimension. 
 
         out = (x - mean) / (std + self.eps)
         out = self.gamma * out + self.beta
@@ -228,13 +229,19 @@ class EncoderLayer(nn.Module):
         self.dropout2 = nn.Dropout(p=drop_prob)
 
     def forward(self, x, src_mask):
+        # 1. compute self attention
         _x = x
-        x = self.attention(x, x, x, mask=src_mask)
+        x = self.attention(q=x, k=x, v=x, mask=src_mask)
+        
+        # 2. add and norm
         x = self.norm1(x + _x)
         x = self.dropout1(x)
-
+        
+        # 3. positionwise feed forward network
         _x = x
         x = self.ffn(x)
+      
+        # 4. add and norm
         x = self.norm2(x + _x)
         x = self.dropout2(x)
         return x
@@ -285,20 +292,30 @@ class DecoderLayer(nn.Module):
         self.norm3 = LayerNorm(d_model=d_model)
         self.dropout3 = nn.Dropout(p=drop_prob)
 
-    def forward(self, dec, enc, trg_mask, src_mask):
+    def forward(self, dec, enc, trg_mask, src_mask):    
+        # 1. compute self attention
         _x = dec
         x = self.self_attention(dec, dec, dec, mask=trg_mask)
+        
+        # 2. add and norm
         x = self.norm1(x + _x)
         x = self.dropout1(x)
 
         if enc is not None:
+        
+            # 3. compute encoder - decoder attention
             _x = x
             x = self.enc_dec_attention(x, enc, enc, mask=src_mask)
+            
+            # 4. add and norm
             x = self.norm2(x + _x)
             x = self.dropout2(x)
 
+        # 5. positionwise feed forward network
         _x = x
         x = self.ffn(x)
+        
+        # 6. add and norm
         x = self.norm3(x + _x)
         x = self.dropout3(x)
 
@@ -330,8 +347,8 @@ class Decoder(nn.Module):
         for layer in self.layers:
             trg = layer(trg, src, trg_mask, src_mask)
 
+        # pass to LM head
         output = self.linear(trg)
-
         return output
 ```
 <br><br>
