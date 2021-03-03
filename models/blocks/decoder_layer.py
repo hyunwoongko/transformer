@@ -29,7 +29,7 @@ class DecoderLayer(nn.Module):
     def forward(self, dec, enc, t_mask, s_mask):
         # 1. compute self attention
         _x = dec
-        x = self.self_attention(dec, dec, dec, mask=trg_mask)
+        x = self.self_attention(q=dec, k=dec, v=dec, mask=trg_mask)
         
         # 2. add and norm
         x = self.norm1(x + _x)
@@ -38,7 +38,7 @@ class DecoderLayer(nn.Module):
         if enc is not None:
             # 3. compute encoder - decoder attention
             _x = x
-            x = self.enc_dec_attention(x, enc, enc, mask=src_mask)
+            x = self.enc_dec_attention(q=x, k=enc, v=enc, mask=src_mask)
             
             # 4. add and norm
             x = self.norm2(x + _x)
@@ -51,5 +51,4 @@ class DecoderLayer(nn.Module):
         # 6. add and norm
         x = self.norm3(x + _x)
         x = self.dropout3(x)
-
         return x
