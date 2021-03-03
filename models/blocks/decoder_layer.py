@@ -36,7 +36,6 @@ class DecoderLayer(nn.Module):
         x = self.dropout1(x)
 
         if enc is not None:
-        
             # 3. compute encoder - decoder attention
             _x = x
             x = self.enc_dec_attention(x, enc, enc, mask=src_mask)
