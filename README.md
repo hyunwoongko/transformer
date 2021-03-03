@@ -317,7 +317,6 @@ class DecoderLayer(nn.Module):
         # 6. add and norm
         x = self.norm3(x + _x)
         x = self.dropout3(x)
-
         return x
 ```
 <br>
