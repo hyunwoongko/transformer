@@ -33,6 +33,6 @@ class Decoder(nn.Module):
         for layer in self.layers:
             trg = layer(trg, enc_src, trg_mask, src_mask)
 
+        # pass to LM head
         output = self.linear(trg)
-
         return output
