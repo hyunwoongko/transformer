@@ -45,7 +45,19 @@ class Transformer(nn.Module):
         return output
 
     def make_src_mask(self, src):
-        src_mask = (src != self.src_pad_idx).unsqueeze(1).unsqueeze(2)
+        batch_size, length = src.size()
+
+        # batch_size x 1 x 1 x len_k
+        src_k = src.ne(self.src_pad_idx).unsqueeze(1).unsqueeze(2)
+        # batch_size x 1 x len_q x len_k
+        src_k = src_k.repeat(1, 1, length, 1)
+
+        # batch_size x 1 x len_q x 1
+        src_q = src.ne(self.src_pad_idx).unsqueeze(1).unsqueeze(3)
+        # batch_size x 1 x len_q x len_k
+        src_q = src_q.repeat(1, 1, 1, length)
+
+        src_mask = src_k & src_q
         return src_mask
 
     def make_trg_mask(self, trg):
