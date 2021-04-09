@@ -30,8 +30,6 @@ class ScaleDotProductAttention(nn.Module):
         k_t = k.view(batch_size, head, d_tensor, length)  # transpose
         score = (q @ k_t) / math.sqrt(d_tensor)  # scaled dot product
 
-        print("score : {}" .format(score.size()))
-        print("mask : {}" .format(mask.size()))
         # 2. apply masking (opt)
         if mask is not None:
             score = score.masked_fill(mask == 0, -e)
