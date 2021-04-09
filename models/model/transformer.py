@@ -38,31 +38,37 @@ class Transformer(nn.Module):
                                device=device)
 
     def forward(self, src, trg):
-        src_mask = self.make_src_mask(src)
-        trg_mask = self.make_trg_mask(trg)
+        src_mask = self.make_pad_mask(src, src)
+
+        src_trg_mask = self.make_pad_mask(trg, src)
+
+        trg_mask = self.make_pad_mask(trg, trg) * \
+                   self.make_no_peak_mask(trg, trg)
+
         enc_src = self.encoder(src, src_mask)
-        output = self.decoder(trg, enc_src, trg_mask, src_mask)
+        output = self.decoder(trg, enc_src, trg_mask, src_trg_mask)
         return output
 
-    def make_src_mask(self, src):
-        batch_size, length = src.size()
+    def make_pad_mask(self, q, k):
+        len_q, len_k = q.size(1), k.size(1)
 
         # batch_size x 1 x 1 x len_k
-        src_k = src.ne(self.src_pad_idx).unsqueeze(1).unsqueeze(2)
+        k = k.ne(self.src_pad_idx).unsqueeze(1).unsqueeze(2)
         # batch_size x 1 x len_q x len_k
-        src_k = src_k.repeat(1, 1, length, 1)
+        k = k.repeat(1, 1, len_q, 1)
 
         # batch_size x 1 x len_q x 1
-        src_q = src.ne(self.src_pad_idx).unsqueeze(1).unsqueeze(3)
+        q = q.ne(self.src_pad_idx).unsqueeze(1).unsqueeze(3)
         # batch_size x 1 x len_q x len_k
-        src_q = src_q.repeat(1, 1, 1, length)
+        q = q.repeat(1, 1, 1, len_k)
 
-        src_mask = src_k & src_q
-        return src_mask
+        mask = k & q
+        return mask
 
-    def make_trg_mask(self, trg):
-        trg_pad_mask = (trg != self.trg_pad_idx).unsqueeze(1).unsqueeze(3)
-        trg_len = trg.shape[1]
-        trg_sub_mask = torch.tril(torch.ones(trg_len, trg_len)).type(torch.ByteTensor).to(self.device)
-        trg_mask = trg_pad_mask & trg_sub_mask
-        return trg_mask
+    def make_no_peak_mask(self, q, k):
+        len_q, len_k = q.size(1), k.size(1)
+
+        # len_q x len_k
+        mask = torch.tril(torch.ones(len_q, len_k)).type(torch.BoolTensor).to(self.device)
+
+        return mask

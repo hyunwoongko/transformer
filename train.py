@@ -47,7 +47,6 @@ optimizer = Adam(params=model.parameters(),
 scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer=optimizer,
                                                  verbose=True,
                                                  factor=factor,
-                                                 min_lr=min_lr,
                                                  patience=patience)
 
 criterion = nn.CrossEntropyLoss(ignore_index=src_pad_idx)
