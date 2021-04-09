@@ -3,3 +3,4 @@ data/
 venv/
 .data/
 *.pt
+_pycache__
