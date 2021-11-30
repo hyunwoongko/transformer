@@ -48,7 +48,7 @@ class MultiHeadAttention(nn.Module):
         batch_size, length, d_model = tensor.size()
 
         d_tensor = d_model // self.n_head
-        tensor = tensor.view(batch_size, self.n_head, length, d_tensor)
+        tensor = tensor.view(batch_size, length, self.n_head, d_tensor).transpose(1, 2)
         # it is similar with group convolution (split by number of heads)
 
         return tensor
@@ -63,5 +63,5 @@ class MultiHeadAttention(nn.Module):
         batch_size, head, length, d_tensor = tensor.size()
         d_model = head * d_tensor
 
-        tensor = tensor.view(batch_size, length, d_model)
+        tensor = tensor.transpose(1, 2).contiguous().view(batch_size, length, d_model)
         return tensor

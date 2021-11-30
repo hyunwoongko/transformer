@@ -4,3 +4,4 @@ venv/
 .data/
 *.pt
 __pycache__
+result/
