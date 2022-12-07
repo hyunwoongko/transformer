@@ -151,7 +151,7 @@ class ScaleDotProductAttention(nn.Module):
 
         # 2. apply masking (opt)
         if mask is not None:
-            score = score.masked_fill(mask == 0, -e)
+            score = score.masked_fill(mask == 0, -10000)
 
         # 3. pass them softmax to make [0, 1] range
         score = self.softmax(score)
@@ -168,7 +168,6 @@ class ScaleDotProductAttention(nn.Module):
 ![model](image/layer_norm.jpg)
     
 ```python
-
 class LayerNorm(nn.Module):
     def __init__(self, d_model, eps=1e-12):
         super(LayerNorm, self).__init__()
@@ -178,12 +177,13 @@ class LayerNorm(nn.Module):
 
     def forward(self, x):
         mean = x.mean(-1, keepdim=True)
-        std = x.std(-1, keepdim=True)
+        var = x.var(-1, unbiased=False, keepdim=True)
         # '-1' means last dimension. 
 
-        out = (x - mean) / (std + self.eps)
+        out = (x - mean) / torch.sqrt(var + self.eps)
         out = self.gamma * out + self.beta
         return out
+
 ```
 <br><br>
 
