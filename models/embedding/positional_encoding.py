@@ -7,7 +7,7 @@ import torch
 from torch import nn
 
 
-class PostionalEncoding(nn.Module):
+class PositionalEncoding(nn.Module):
     """
     compute sinusoid encoding.
     """
@@ -20,7 +20,7 @@ class PostionalEncoding(nn.Module):
         :param max_len: max sequence length
         :param device: hardware device setting
         """
-        super(PostionalEncoding, self).__init__()
+        super(PositionalEncoding, self).__init__()
 
         # same size with input matrix (for adding with input matrix)
         self.encoding = torch.zeros(max_len, d_model, device=device)

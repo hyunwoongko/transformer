@@ -5,7 +5,7 @@
 """
 from torch import nn
 
-from models.embedding.positional_encoding import PostionalEncoding
+from models.embedding.positional_encoding import PositionalEncoding
 from models.embedding.token_embeddings import TokenEmbedding
 
 
@@ -24,7 +24,7 @@ class TransformerEmbedding(nn.Module):
         """
         super(TransformerEmbedding, self).__init__()
         self.tok_emb = TokenEmbedding(vocab_size, d_model)
-        self.pos_emb = PostionalEncoding(d_model, max_len, device)
+        self.pos_emb = PositionalEncoding(d_model, max_len, device)
         self.drop_out = nn.Dropout(p=drop_prob)
 
     def forward(self, x):
