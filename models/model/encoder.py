@@ -25,10 +25,10 @@ class Encoder(nn.Module):
                                                   drop_prob=drop_prob)
                                      for _ in range(n_layers)])
 
-    def forward(self, x, s_mask):
+    def forward(self, x, src_mask):
         x = self.emb(x)
 
         for layer in self.layers:
-            x = layer(x, s_mask)
+            x = layer(x, src_mask)
 
         return x
