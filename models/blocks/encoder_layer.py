@@ -3,6 +3,7 @@
 @when : 2019-10-24
 @homepage : https://github.com/gusdnd852
 """
+
 from torch import nn
 
 from models.layers.layer_norm import LayerNorm
@@ -18,7 +19,9 @@ class EncoderLayer(nn.Module):
         self.norm1 = LayerNorm(d_model=d_model)
         self.dropout1 = nn.Dropout(p=drop_prob)
 
-        self.ffn = PositionwiseFeedForward(d_model=d_model, hidden=ffn_hidden, drop_prob=drop_prob)
+        self.ffn = PositionwiseFeedForward(
+            d_model=d_model, hidden=ffn_hidden, drop_prob=drop_prob
+        )
         self.norm2 = LayerNorm(d_model=d_model)
         self.dropout2 = nn.Dropout(p=drop_prob)
 
@@ -26,15 +29,15 @@ class EncoderLayer(nn.Module):
         # 1. compute self attention
         _x = x
         x = self.attention(q=x, k=x, v=x, mask=src_mask)
-        
+
         # 2. add and norm
         x = self.dropout1(x)
         x = self.norm1(x + _x)
-        
+
         # 3. positionwise feed forward network
         _x = x
         x = self.ffn(x)
-      
+
         # 4. add and norm
         x = self.dropout2(x)
         x = self.norm2(x + _x)

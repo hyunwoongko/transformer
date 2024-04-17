@@ -3,6 +3,7 @@
 @when : 2019-10-22
 @homepage : https://github.com/gusdnd852
 """
+
 import torch
 
 # GPU device setting
@@ -26,4 +27,4 @@ warmup = 100
 epoch = 1000
 clip = 1.0
 weight_decay = 5e-4
-inf = float('inf')
+inf = float("inf")
