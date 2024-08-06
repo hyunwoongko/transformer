@@ -5,3 +5,4 @@ venv/
 *.pt
 __pycache__
 result/
+.idea/
