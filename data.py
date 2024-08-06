@@ -4,15 +4,15 @@
 @homepage : https://github.com/gusdnd852
 """
 from conf import *
-from util.data_loader import DataLoader
+from util.data_loader import TranslationDataLoader
 from util.tokenizer import Tokenizer
 
 tokenizer = Tokenizer()
-loader = DataLoader(ext=('.en', '.de'),
-                    tokenize_en=tokenizer.tokenize_en,
-                    tokenize_de=tokenizer.tokenize_de,
-                    init_token='<sos>',
-                    eos_token='<eos>')
+loader = TranslationDataLoader(ext=('.en', '.de'),
+                               tokenize_en=tokenizer.tokenize_en,
+                               tokenize_de=tokenizer.tokenize_de,
+                               init_token='<sos>',
+                               eos_token='<eos>')
 
 train, valid, test = loader.make_dataset()
 loader.build_vocab(train_data=train, min_freq=2)
