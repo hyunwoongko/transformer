@@ -13,6 +13,7 @@ class TokenEmbedding(nn.Embedding):
     """
 
     def __init__(self, vocab_size, d_model):
+        self.embedding=nn.Embedding(vocab_size,d_model)
         """
         class for token embedding that included positional information
 
@@ -20,3 +21,5 @@ class TokenEmbedding(nn.Embedding):
         :param d_model: dimensions of model
         """
         super(TokenEmbedding, self).__init__(vocab_size, d_model, padding_idx=1)
+    def forward(self,x):
+        return self.embedding(x)
