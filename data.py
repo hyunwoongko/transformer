@@ -20,9 +20,9 @@ train_iter, valid_iter, test_iter = loader.make_iter(train, valid, test,
                                                      batch_size=batch_size,
                                                      device=device)
 
-src_pad_idx = loader.source.vocab.stoi['<pad>']
-trg_pad_idx = loader.target.vocab.stoi['<pad>']
-trg_sos_idx = loader.target.vocab.stoi['<sos>']
+src_pad_idx = loader.source_vocab['<pad>']
+trg_pad_idx = loader.target_vocab['<pad>']
+trg_sos_idx = loader.target_vocab['<sos>']
 
-enc_voc_size = len(loader.source.vocab)
-dec_voc_size = len(loader.target.vocab)
+enc_voc_size = len(loader.source_vocab)
+dec_voc_size = len(loader.target_vocab)
