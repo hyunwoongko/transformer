@@ -13,7 +13,7 @@ class ScaleDotProductAttention(nn.Module):
     compute scale dot product attention
 
     Query : given sentence that we focused on (decoder)
-    Key : every sentence to check relationship with Qeury(encoder)
+    Key : every sentence to check relationship with Query(encoder)
     Value : every sentence same with Key (encoder)
     """
 
